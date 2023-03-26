@@ -1,4 +1,4 @@
-import { IoIosTrash, IoLogoReddit } from 'react-icons/io';
+import { ImUser, ImBin } from 'react-icons/im';
 import { useDispatch, useSelector } from 'react-redux';
 import { getError, getFilteredContacts, getIsLoading } from 'redux/selectors';
 import { deleteContact } from 'redux/operations';
@@ -34,20 +34,20 @@ export const ContactList = () => {
           </thead>
 
           <tbody>
-            {contacts.map(({ id, name, number }) => {
+            {contacts.map(({ id, name, phone }) => {
               return (
                 <ContactsTableRow key={id}>
                   <ContactsFlexCeil>
-                    <IoLogoReddit size="20" />
+                    <ImUser size="20" />
                     {name}
                   </ContactsFlexCeil>
-                  <ContactsTableCeil>{number}</ContactsTableCeil>
+                  <ContactsTableCeil>{phone}</ContactsTableCeil>
                   <ContactsTableCeil>
                     <ListBtn
                       type="button"
                       onClick={() => dispatch(deleteContact(id))}
                     >
-                      <IoIosTrash size="20" />
+                      <ImBin size="20" />
                     </ListBtn>
                   </ContactsTableCeil>
                 </ContactsTableRow>

@@ -31,7 +31,7 @@ export const App = () => {
         <ContactForm />
       </Section>
       {contacts.length > 0 && (
-        <Section title="Contacts" headerContent={<Filter />}>
+        <Section title="Contacts" Content={<Filter />}>
           <ContactList />
         </Section>
       )}

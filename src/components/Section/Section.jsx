@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import {
   PhonebookSection,
@@ -21,8 +21,8 @@ export const Section = ({ title, children, headerContent }) => {
   );
 };
 
-Section.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
-  headerContent: PropTypes.node.isRequired,
-};
+// Section.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   children: PropTypes.node.isRequired,
+//   headerContent: PropTypes.node.isRequired,
+// };

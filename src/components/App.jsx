@@ -10,12 +10,21 @@ import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 // import data from '../data/contacts';
 
+import { fetchContacts } from 'redux/operations';
+import { useEffect } from 'react';
+
 export const App = () => {
   const contacts = useSelector(getContacts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   return (
     <Layout>
       <Section title="Add contact">
